@@ -4,6 +4,9 @@
 The objective of this project is to predict stock data, thus reducing the amount of guesswork needed to turn a profit on stocks. Having stocks in certain companies already, we would love to get a working model so we know when to buy and sell stock. Hopefully if we get our model to predict known data fairly well, we'll be able to have it predict future stocks just as well.
 # Selection of Data
 The data we selected was from [this site](https://polygon.io/). We took that data that was given to us, which was weekly, and decided to fill it so we could get data that was by the minute. This led to our data set being over 820k data points. Out of those 820k points, we trained 75% of it. With this large data set, we were able to produce a line graph that represented the DOW stock market failry well.
+
+![Alt text](https://github.com/wootenlatwit/LCE-Data-Science-Final/blob/main/Rawdata.png)
+
 # Methods
 Tools:
 * Numpy, Scikit-learn, and Pandas for analysis
