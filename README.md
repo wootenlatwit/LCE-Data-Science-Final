@@ -17,6 +17,9 @@ Methods from Scikit:
 
 # Results
 Looking at the history of a stock's value is just as good as regression model because you can see a trend within the graph. This means it we could identify a stocks value without a regression line in the graph. To improve upon our model, we would like to take regression models for each day and fit that to our model. This could lead to analysis we weren't inherently aware of. 
+
+![Alt text](VizualizedData.png?raw=true "VisualizedData")
+
 # Discussion
 After working with many regression models, we found that SGD did the best at predicting something that wasn't just a linear model. Our model, for the data it does predict for, actually jumps a little at the beginning before going into a fairly shallow exponential growth model. Although this model doesn't predict the values of stocks very well, it can identify trends in the data. Looking online at other's work on the same issue, we found that they used time series analysis along with tensor flow to implement neural networks for their models. Their accuracy levels were a lot higher than ours, so maybe implementing a neural netwrok in the future would help out our model a lot. 
 # Summary
