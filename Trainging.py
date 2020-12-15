@@ -40,8 +40,10 @@ from tqdm import tqdm
 ################rolling_run##################
 #############################################
 
-n=10000
-g=2500
+#TODO: Automate adjustment of N and G
+
+n=12500
+g=1450
 
 print('N: ', n)
 print('G: ', g)
@@ -51,7 +53,7 @@ cumulativeY = pd.DataFrame(columns=['timeStamp', 'prediction'])
 overall = pd.concat([pd.DataFrame(X1).iloc[-g:], pd.DataFrame(y1).iloc[-g::]], axis=1)
 overall.columns=['timeStamp', 'prediction']
 
-#t = tqdm(total=n, unit='Rows')
+t = tqdm(total=n, unit='Rows')
 
 for i in range(n):
     rollingX = rollingX.append(rollingX.copy().iloc[len(rollingX.index)-1], ignore_index=True)
@@ -77,9 +79,9 @@ for i in range(n):
 
     #print(overall)
 
-    #t.update(1)
+    t.update(1)
 
-#t.close()
+t.close()
 
 #############################################
 
@@ -98,7 +100,7 @@ Y5 = Y4.sort_values('timeStamp')
 #print(cumulativeY)
 
 #plt.plot(X4[::5, 0], y2[::5])
-plt.plot(Y5['timeStamp'], Y5['actual'])
+plt.plot(Y5['timeStamp'].iloc[:n:], Y5['actual'].iloc[:n:])
 plt.plot(cumulativeY['timeStamp'], cumulativeY['prediction'])
 plt.legend(['actual', 'prediction'], ncol=1, loc='upper left')
 plt.show()
